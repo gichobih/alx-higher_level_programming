@@ -1,4 +1,4 @@
-The ``Add Integer`` module
+he ``Add Integer`` module
 ============================
 
 Using ``add_integer``
