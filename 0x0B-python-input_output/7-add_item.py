@@ -1,25 +1,15 @@
 #!/usr/bin/python3
-"""
-Module: 7-add_item
-"""
-
-
+import json
 import sys
-from os import path
-from 5-save_to_json_file import save_to_json_file
-from 6-load_from_json_file import load_from_json_file
+import os.path
 
-# Check if the add_item.json file exists
-if path.exists("add_item.json"):
-    # Load the existing list from the file
-    my_list = load_from_json_file("add_item.json")
+save_to_json_file = __import__('7-save_to_json_file').save_to_json_file
+load_from_json_file = __import__('8-load_from_json_file').load_from_json_file
+
+filename = "add_item.json"
+if os.path.isfile(filename):
+    obj = load_from_json_file(filename)
 else:
-    # Create an empty list if the file doesn't exist
-    my_list = []
-
-# Add arguments to the list
-my_list.extend(sys.argv[1:])
-
-# Save the updated list to add_item.json
-save_to_json_file(my_list, "add_item.json")
-
+    obj = []
+obj.extend(sys.argv[1:])
+save_to_json_file(obj, filename)
