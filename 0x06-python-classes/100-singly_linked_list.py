@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+"""Defines the classes Node and SinglyLinkedList"""
 
 class Node:
     """ defines a node of a singly linked list
