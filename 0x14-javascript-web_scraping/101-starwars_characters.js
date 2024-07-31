@@ -1,38 +1,33 @@
 #!/usr/bin/node
 
 const request = require('request');
-const filmId = process.argv[2];
-const apiUrl = `https://swapi-api.alx-tools.com/api/films/${filmId}`;
+const id = process.argv[2];
+const url = `https://swapi-api.alx-tools.com/api/films/${id}`;
 
-request.get(apiUrl, (error, response, body) => {
+request.get(url, (error, response, body) => {
   if (error) {
     console.error('Error fetching film data:', error);
-    return;
-  }
-
-  if (response.statusCode !== 200) {
-    console.error('Failed to retrieve film data. Status code:', response.statusCode);
-    return;
-  }
-
-  const filmData = JSON.parse(body);
-  const characterUrls = filmData.characters;
-
-  for (const characterUrl of characterUrls) {
-    request.get(characterUrl, (error, response, body) => {
-      if (error) {
-        console.error('Error fetching character data:', error);
-        return;
+  } else {
+    if (response.statusCode === 200) {
+      const content = JSON.parse(body);
+      const characters = content.characters;
+      for (const character of characters) {
+        request.get(character, (error, response, body) => {
+          if (error) {
+            console.error('Error fetching character data:', error);
+          } else {
+            if (response.statusCode === 200) {
+              const names = JSON.parse(body);
+              console.log(names.name);
+            } else {
+              console.error(`Failed to retrieve character data. Status code: ${response.statusCode}`);
+            }
+          }
+        });
       }
-
-      if (response.statusCode !== 200) {
-        console.error('Failed to retrieve character data. Status code:', response.statusCode);
-        return;
-      }
-
-      const characterData = JSON.parse(body);
-      console.log(characterData.name);
-    });
+    } else {
+      console.error(`Failed to retrieve film data. Status code: ${response.statusCode}`);
+    }
   }
 });
 
