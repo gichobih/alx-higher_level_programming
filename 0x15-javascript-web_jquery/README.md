@@ -1,33 +1,33 @@
-#JavaScript - Web jQuery
+# JavaScript - Web jQuery
 
 For this project, we expect you to look at these concepts:
 
 *[JavaScript in the browser](#JavaScript in the browser)
 *[Dealing with data statically versus dynamically](#Dealing with data statically versus dynamically)
 
-#JavaScript in the browser
+# [JavaScript in the browser]
 
-##Why JavaScript in the browser?
+## Why JavaScript in the browser?
 Now that we can structure the document and its content with HTML, and that we can style it in many ways with CSS, we may want to go beyond those capabilities (dynamically change the HTML document, perform some operations based on some current circumstances, …). JavaScript was created with exactly that goal in mind, and is still being used as such; its recent popular renewal as a language for scripts and web back-ends using Node.js is quite recent. All browsers expect HTML, CSS and JavaScript; Whatever you want to write for the web, even the most complex applications (even GMail, Google Maps, …) will have no choice but to be composed of those three technologies if they want to be understood by browsers.
 
 A quick history to know where we come from
 Note: the JavaScript language has nothing to do with the Java language. Please make sure not to use the wrong word!
 
-##Step 1: Browser War and standardization
+## Step 1: Browser War and standardization
 Before the Browser War, the first “mainstream” browser was called Mosaic. It existed between 1993 and 1997 and had very limited features. Netscape released Netscape Navigator in 1995 in an attempt to shake things up and bring more features to the web experience. Quickly, Netscape Navigator had ~80% market share; but then quickly came Microsoft Internet Explorer 1.
 
 The Browser War was a time when web browser market share was shared between Netscape Navigator and Microsoft Internet Explorer, and each browser was trying to one-up the other with fancy features for developers. It is a time that saw the birth of frames, CSS, and… JavaScript! Brendan Eich, back then a developer at Netscape, wrote the first version of JavaScript in 10 days (and it kinda still shows in the quirks of the language!), in order to ship it before Internet Explorer, with almost no documentation. People making websites were quick to use it to do nice things with Netscape Navigator, so Microsoft shipped a reverse-engineered version of it a few days later.
 
 Of course, with this kind of approach, behavior in browsers were inconsistent, so Netscape ended up submitting the language for standardization with the ECMA, where it was given its actual name: ECMAscript (but everybody keeps saying JavaScript, so you should keep calling it that too).
 
-##Step 2: shy steps towards consistency
+## Step 2: shy steps towards consistency
 Netscape Navigator 5 was taking far too long to build because of heavy legacy issues, so Netscape decided to give it up and to prepare for Netscape Navigator 6, rebuilt entirely from the ground up. Rebuilding something this large entirely from the ground up is notoriously always a very bad decision in product management, and this occurrence didn’t fail the rule: Netscape disappeared for years while its browser took much longer than expected to be built, making a boulevard for Microsoft Internet Explorer to take virtually all of the market share.
 
 The result for JavaScript is that for years, Microsoft didn’t follow through on their promise to make their version of JavaScript compatible with the ECMA standard. They had good reasons not to: since almost the entire planet was using their product, their incompatibility with other browsers was kind of a competitive advantage. Since developers who could only focus their efforts on one version of JavaScript were focusing on Microsoft Internet Explorer, their websites were effectively broken in other browsers.
 
 This gave birth to Javascript libraries whose goals were to harmonize a single language API that worked in all browsers, such as JQuery (which comes with other features too).
 
-##Step 3: towards a more mature language
+## Step 3: towards a more mature language
 After years of JavaScript developers having to either produce one code per browser, or use libraries like JQuery, Microsoft’s strategy eventually caught up to them for two main reasons:
 
 Rich front-end applications requiring heavy JavaScript became more and more mainstream, and Microsoft’s willful years of tardiness compared to other browsers led Internet Explorer (circa version 6, 7 and 8) to be much slower than the rest of the competition. People started to install other browsers in order to use comfortably their Gmail, Google Maps, etc.
@@ -56,10 +56,10 @@ The DOM Standing for “Document Object Model”, the DOM is the HTML code as th
 
 The event-orientation Since JavaScript in the browser is meant to perform actions when certain things happen, callbacks are not being run after I/O operations are performed like in Node.js, but when some events happen. Those events can be triggered by the user (a click on a button, the browser window being resized, …) or sometimes not (an image isn’t loading properly, the HTML webpage has finished loading, …)
 
-##Tools
+## Tools
 You have many features in your browser’s dev tools meant to help you: a JavaScript console where you can run code that will directly apply to the webpage that is opened, a debugger allowing you to add breakpoints, etc. Take some time to get familiar with them…
 
-#Dealing with data statically versus dynamically
+# Dealing with data statically versus dynamically
 
 We often use the terms “static” and “dynamic” when it comes to websites. A static website is unchanging and stays the same regardless of how we interact with it. A dynamic website has content and/or presentation that can change (courtesy of scripts that loads every time the site is loaded). The same static-dynamic concept can be applied to data handling. If you deal with data statically, you’re using your dataset as a fixed set of values; if you deal with data dynamically, you’re using it as a set of data that changes over time.
 
